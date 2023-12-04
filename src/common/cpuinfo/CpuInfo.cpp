@@ -60,6 +60,8 @@ namespace arm_compute
 {
 namespace cpuinfo
 {
+UseCore g_use_core = UseCore::BOTH;
+
 namespace
 {
 #if !defined(_WIN64) && !defined(BARE_METAL) && !defined(__APPLE__) && !defined(__OpenBSD__) && (defined(__arm__) || defined(__aarch64__))
@@ -73,6 +75,26 @@ std::vector<uint32_t> midr_from_cpuid(uint32_t max_num_cpus)
 {
     std::vector<uint32_t> cpus;
     for(unsigned int i = 0; i < max_num_cpus; ++i)
+    {
+        std::stringstream str;
+        str << "/sys/devices/system/cpu/cpu" << i << "/regs/identification/midr_el1";
+        std::ifstream file(str.str(), std::ios::in);
+        if(file.is_open())
+        {
+            std::string line;
+            if(bool(getline(file, line)))
+            {
+                cpus.emplace_back(support::cpp11::stoul(line, nullptr, support::cpp11::NumericBase::BASE_16));
+            }
+        }
+    }
+    return cpus;
+}
+
+std::vector<uint32_t> midr_from_cpuid_range(uint32_t lb, uint32_t ub)
+{
+    std::vector<uint32_t> cpus;
+    for(unsigned int i = lb; i < ub; ++i)
     {
         std::stringstream str;
         str << "/sys/devices/system/cpu/cpu" << i << "/regs/identification/midr_el1";
@@ -300,6 +322,14 @@ CpuInfo::CpuInfo(CpuIsaInfo isa, std::vector<CpuModel> cpus)
 {
 }
 
+static void remove_small_cores(std::vector<uint32_t>& cpus) {
+    cpus.erase(cpus.begin(), cpus.begin()+2);
+}
+
+static void remove_big_cores(std::vector<uint32_t>& cpus) {
+    cpus.erase(cpus.begin()+2, cpus.begin()+6);
+}
+
 CpuInfo CpuInfo::build()
 {
 #if !defined(_WIN64) && !defined(BARE_METAL) && !defined(__APPLE__) && !defined(__OpenBSD__) && (defined(__arm__) || defined(__aarch64__))
@@ -321,6 +351,19 @@ CpuInfo CpuInfo::build()
     {
         cpus_midr.resize(max_cpus, 0);
     }
+
+    if (g_use_core == UseCore::BIG) {
+        printf("Use big cores only! \n");
+        remove_small_cores(cpus_midr);
+    } else if (g_use_core == UseCore::SMALL) {
+        printf("Use small cores only! \n");
+        remove_big_cores(cpus_midr);
+    }
+
+//    std::cout << "CPU midr: \n" ;
+//    for (int c : cpus_midr) {
+//        std::cout << c << " " << std::endl;
+//    }
 
     // Populate isa (Assume homogeneous ISA specification)
     CpuIsaInfo isa = init_cpu_isa_from_hwcaps(hwcaps, hwcaps2, cpus_midr.back());
@@ -427,12 +470,14 @@ uint32_t num_threads_hint()
         std::unordered_map<std::string, uint32_t> cpus_freq;
         for(const auto &cpu : cpus)
         {
+//            std::cout << "cpu " << cpu << std::endl;
             cpus_freq[cpu]++;
         }
 
         uint32_t vmin = cpus.size() + 1;
         for(const auto &cpu_freq : cpus_freq)
         {
+//            std::cout << "cpu freq " << cpu_freq.second << std::endl;
             vmin = std::min(vmin, cpu_freq.second);
         }
         return vmin;

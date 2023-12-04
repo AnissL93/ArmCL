@@ -34,6 +34,14 @@ namespace arm_compute
 {
 namespace cpuinfo
 {
+enum class UseCore {
+    BIG=0,
+    SMALL=1,
+    BOTH = 2
+};
+
+extern UseCore g_use_core;
+
 /** Aggregate class that contains CPU related information
  *
  * Contains information about the numbers of the CPUs, the model of each CPU,

@@ -45,9 +45,11 @@ set(EXAMPLE_GRAPH_NAMES
     graph_vgg16
     graph_vgg19
     graph_yolov3
+    graph_proxyless
     PARENT_SCOPE)
 
 set(EXAMPLE_NEON_NAMES
     neon_cnn neon_copy_objects neon_gemm_qasymm8 neon_permute neon_scale
     neon_sgemm
+        graph_expand_conv
     PARENT_SCOPE)

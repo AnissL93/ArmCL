@@ -1,0 +1,1350 @@
+{
+    "Conv-input:224x224x3-output:112x112x32": {
+        "type": "Conv",
+        "input": [
+            224,
+            224,
+            3
+        ],
+        "output": [
+            112,
+            112,
+            32
+        ]
+    },
+    "Conv_1-input:7x7x320-output:7x7x1280": {
+        "type": "Conv_1",
+        "input": [
+            7,
+            7,
+            320
+        ],
+        "output": [
+            7,
+            7,
+            1280
+        ]
+    },
+    "Logits-input:7x7x1280-output:1000": {
+        "type": "Logits",
+        "input": [
+            7,
+            7,
+            1280
+        ],
+        "output": [
+            1000
+        ]
+    },
+    "expanded_conv-input:112x112x16-output:56x56x24-expand:3-kernel:3-stride:2-idskip:0": {
+        "type": "expanded_conv",
+        "input": [
+            112,
+            112,
+            16
+        ],
+        "output": [
+            56,
+            56,
+            24
+        ],
+        "expand": 3,
+        "kernel": 3,
+        "stride": 2,
+        "idskip": 0,
+        "pad_l": 0,
+        "pad_r": 1
+    },
+    "expanded_conv-input:112x112x16-output:56x56x24-expand:3-kernel:5-stride:2-idskip:0": {
+        "type": "expanded_conv",
+        "input": [
+            112,
+            112,
+            16
+        ],
+        "output": [
+            56,
+            56,
+            24
+        ],
+        "expand": 3,
+        "kernel": 5,
+        "stride": 2,
+        "idskip": 0,
+        "pad_l": 1,
+        "pad_r": 2
+    },
+    "expanded_conv-input:112x112x16-output:56x56x24-expand:3-kernel:7-stride:2-idskip:0": {
+        "type": "expanded_conv",
+        "input": [
+            112,
+            112,
+            16
+        ],
+        "output": [
+            56,
+            56,
+            24
+        ],
+        "expand": 3,
+        "kernel": 7,
+        "stride": 2,
+        "idskip": 0,
+        "pad_l": 2,
+        "pad_r": 3
+    },
+    "expanded_conv-input:112x112x16-output:56x56x24-expand:6-kernel:3-stride:2-idskip:0": {
+        "type": "expanded_conv",
+        "input": [
+            112,
+            112,
+            16
+        ],
+        "output": [
+            56,
+            56,
+            24
+        ],
+        "expand": 6,
+        "kernel": 3,
+        "stride": 2,
+        "idskip": 0,
+        "pad_l": 0,
+        "pad_r": 1
+    },
+    "expanded_conv-input:112x112x16-output:56x56x24-expand:6-kernel:5-stride:2-idskip:0": {
+        "type": "expanded_conv",
+        "input": [
+            112,
+            112,
+            16
+        ],
+        "output": [
+            56,
+            56,
+            24
+        ],
+        "expand": 6,
+        "kernel": 5,
+        "stride": 2,
+        "idskip": 0,
+        "pad_l": 1,
+        "pad_r": 2
+    },
+    "expanded_conv-input:112x112x16-output:56x56x24-expand:6-kernel:7-stride:2-idskip:0": {
+        "type": "expanded_conv",
+        "input": [
+            112,
+            112,
+            16
+        ],
+        "output": [
+            56,
+            56,
+            24
+        ],
+        "expand": 6,
+        "kernel": 7,
+        "stride": 2,
+        "idskip": 0,
+        "pad_l": 2,
+        "pad_r": 3
+    },
+    "expanded_conv-input:112x112x32-output:112x112x16-expand:1-kernel:3-stride:1-idskip:0": {
+        "type": "expanded_conv",
+        "input": [
+            112,
+            112,
+            32
+        ],
+        "output": [
+            112,
+            112,
+            16
+        ],
+        "expand": 1,
+        "kernel": 3,
+        "stride": 1,
+        "idskip": 0,
+        "pad_l": 1,
+        "pad_r": 1
+    },
+    "expanded_conv-input:112x112x32-output:112x112x16-expand:1-kernel:5-stride:1-idskip:0": {
+        "type": "expanded_conv",
+        "input": [
+            112,
+            112,
+            32
+        ],
+        "output": [
+            112,
+            112,
+            16
+        ],
+        "expand": 1,
+        "kernel": 5,
+        "stride": 1,
+        "idskip": 0,
+        "pad_l": 2,
+        "pad_r": 2
+    },
+    "expanded_conv-input:112x112x32-output:112x112x16-expand:1-kernel:7-stride:1-idskip:0": {
+        "type": "expanded_conv",
+        "input": [
+            112,
+            112,
+            32
+        ],
+        "output": [
+            112,
+            112,
+            16
+        ],
+        "expand": 1,
+        "kernel": 7,
+        "stride": 1,
+        "idskip": 0,
+        "pad_l": 3,
+        "pad_r": 3
+    },
+    "expanded_conv-input:14x14x80-output:14x14x80-expand:3-kernel:3-stride:1-idskip:1": {
+        "type": "expanded_conv",
+        "input": [
+            14,
+            14,
+            80
+        ],
+        "output": [
+            14,
+            14,
+            80
+        ],
+        "expand": 3,
+        "kernel": 3,
+        "stride": 1,
+        "idskip": 1,
+        "pad_l": 1,
+        "pad_r": 1
+    },
+    "expanded_conv-input:14x14x80-output:14x14x80-expand:3-kernel:5-stride:1-idskip:1": {
+        "type": "expanded_conv",
+        "input": [
+            14,
+            14,
+            80
+        ],
+        "output": [
+            14,
+            14,
+            80
+        ],
+        "expand": 3,
+        "kernel": 5,
+        "stride": 1,
+        "idskip": 1,
+        "pad_l": 2,
+        "pad_r": 2
+    },
+    "expanded_conv-input:14x14x80-output:14x14x80-expand:3-kernel:7-stride:1-idskip:1": {
+        "type": "expanded_conv",
+        "input": [
+            14,
+            14,
+            80
+        ],
+        "output": [
+            14,
+            14,
+            80
+        ],
+        "expand": 3,
+        "kernel": 7,
+        "stride": 1,
+        "idskip": 1,
+        "pad_l": 3,
+        "pad_r": 3
+    },
+    "expanded_conv-input:14x14x80-output:14x14x80-expand:6-kernel:3-stride:1-idskip:1": {
+        "type": "expanded_conv",
+        "input": [
+            14,
+            14,
+            80
+        ],
+        "output": [
+            14,
+            14,
+            80
+        ],
+        "expand": 6,
+        "kernel": 3,
+        "stride": 1,
+        "idskip": 1,
+        "pad_l": 1,
+        "pad_r": 1
+    },
+    "expanded_conv-input:14x14x80-output:14x14x80-expand:6-kernel:5-stride:1-idskip:1": {
+        "type": "expanded_conv",
+        "input": [
+            14,
+            14,
+            80
+        ],
+        "output": [
+            14,
+            14,
+            80
+        ],
+        "expand": 6,
+        "kernel": 5,
+        "stride": 1,
+        "idskip": 1,
+        "pad_l": 2,
+        "pad_r": 2
+    },
+    "expanded_conv-input:14x14x80-output:14x14x80-expand:6-kernel:7-stride:1-idskip:1": {
+        "type": "expanded_conv",
+        "input": [
+            14,
+            14,
+            80
+        ],
+        "output": [
+            14,
+            14,
+            80
+        ],
+        "expand": 6,
+        "kernel": 7,
+        "stride": 1,
+        "idskip": 1,
+        "pad_l": 3,
+        "pad_r": 3
+    },
+    "expanded_conv-input:14x14x80-output:14x14x96-expand:3-kernel:3-stride:1-idskip:0": {
+        "type": "expanded_conv",
+        "input": [
+            14,
+            14,
+            80
+        ],
+        "output": [
+            14,
+            14,
+            96
+        ],
+        "expand": 3,
+        "kernel": 3,
+        "stride": 1,
+        "idskip": 0,
+        "pad_l": 1,
+        "pad_r": 1
+    },
+    "expanded_conv-input:14x14x80-output:14x14x96-expand:3-kernel:5-stride:1-idskip:0": {
+        "type": "expanded_conv",
+        "input": [
+            14,
+            14,
+            80
+        ],
+        "output": [
+            14,
+            14,
+            96
+        ],
+        "expand": 3,
+        "kernel": 5,
+        "stride": 1,
+        "idskip": 0,
+        "pad_l": 2,
+        "pad_r": 2
+    },
+    "expanded_conv-input:14x14x80-output:14x14x96-expand:3-kernel:7-stride:1-idskip:0": {
+        "type": "expanded_conv",
+        "input": [
+            14,
+            14,
+            80
+        ],
+        "output": [
+            14,
+            14,
+            96
+        ],
+        "expand": 3,
+        "kernel": 7,
+        "stride": 1,
+        "idskip": 0,
+        "pad_l": 3,
+        "pad_r": 3
+    },
+    "expanded_conv-input:14x14x80-output:14x14x96-expand:6-kernel:3-stride:1-idskip:0": {
+        "type": "expanded_conv",
+        "input": [
+            14,
+            14,
+            80
+        ],
+        "output": [
+            14,
+            14,
+            96
+        ],
+        "expand": 6,
+        "kernel": 3,
+        "stride": 1,
+        "idskip": 0,
+        "pad_l": 1,
+        "pad_r": 1
+    },
+    "expanded_conv-input:14x14x80-output:14x14x96-expand:6-kernel:5-stride:1-idskip:0": {
+        "type": "expanded_conv",
+        "input": [
+            14,
+            14,
+            80
+        ],
+        "output": [
+            14,
+            14,
+            96
+        ],
+        "expand": 6,
+        "kernel": 5,
+        "stride": 1,
+        "idskip": 0,
+        "pad_l": 2,
+        "pad_r": 2
+    },
+    "expanded_conv-input:14x14x80-output:14x14x96-expand:6-kernel:7-stride:1-idskip:0": {
+        "type": "expanded_conv",
+        "input": [
+            14,
+            14,
+            80
+        ],
+        "output": [
+            14,
+            14,
+            96
+        ],
+        "expand": 6,
+        "kernel": 7,
+        "stride": 1,
+        "idskip": 0,
+        "pad_l": 3,
+        "pad_r": 3
+    },
+    "expanded_conv-input:14x14x96-output:14x14x96-expand:3-kernel:3-stride:1-idskip:1": {
+        "type": "expanded_conv",
+        "input": [
+            14,
+            14,
+            96
+        ],
+        "output": [
+            14,
+            14,
+            96
+        ],
+        "expand": 3,
+        "kernel": 3,
+        "stride": 1,
+        "idskip": 1,
+        "pad_l": 1,
+        "pad_r": 1
+    },
+    "expanded_conv-input:14x14x96-output:14x14x96-expand:3-kernel:5-stride:1-idskip:1": {
+        "type": "expanded_conv",
+        "input": [
+            14,
+            14,
+            96
+        ],
+        "output": [
+            14,
+            14,
+            96
+        ],
+        "expand": 3,
+        "kernel": 5,
+        "stride": 1,
+        "idskip": 1,
+        "pad_l": 2,
+        "pad_r": 2
+    },
+    "expanded_conv-input:14x14x96-output:14x14x96-expand:3-kernel:7-stride:1-idskip:1": {
+        "type": "expanded_conv",
+        "input": [
+            14,
+            14,
+            96
+        ],
+        "output": [
+            14,
+            14,
+            96
+        ],
+        "expand": 3,
+        "kernel": 7,
+        "stride": 1,
+        "idskip": 1,
+        "pad_l": 3,
+        "pad_r": 3
+    },
+    "expanded_conv-input:14x14x96-output:14x14x96-expand:6-kernel:3-stride:1-idskip:1": {
+        "type": "expanded_conv",
+        "input": [
+            14,
+            14,
+            96
+        ],
+        "output": [
+            14,
+            14,
+            96
+        ],
+        "expand": 6,
+        "kernel": 3,
+        "stride": 1,
+        "idskip": 1,
+        "pad_l": 1,
+        "pad_r": 1
+    },
+    "expanded_conv-input:14x14x96-output:14x14x96-expand:6-kernel:5-stride:1-idskip:1": {
+        "type": "expanded_conv",
+        "input": [
+            14,
+            14,
+            96
+        ],
+        "output": [
+            14,
+            14,
+            96
+        ],
+        "expand": 6,
+        "kernel": 5,
+        "stride": 1,
+        "idskip": 1,
+        "pad_l": 2,
+        "pad_r": 2
+    },
+    "expanded_conv-input:14x14x96-output:14x14x96-expand:6-kernel:7-stride:1-idskip:1": {
+        "type": "expanded_conv",
+        "input": [
+            14,
+            14,
+            96
+        ],
+        "output": [
+            14,
+            14,
+            96
+        ],
+        "expand": 6,
+        "kernel": 7,
+        "stride": 1,
+        "idskip": 1,
+        "pad_l": 3,
+        "pad_r": 3
+    },
+    "expanded_conv-input:14x14x96-output:7x7x192-expand:3-kernel:3-stride:2-idskip:0": {
+        "type": "expanded_conv",
+        "input": [
+            14,
+            14,
+            96
+        ],
+        "output": [
+            7,
+            7,
+            192
+        ],
+        "expand": 3,
+        "kernel": 3,
+        "stride": 2,
+        "idskip": 0,
+        "pad_l": 0,
+        "pad_r": 1
+    },
+    "expanded_conv-input:14x14x96-output:7x7x192-expand:3-kernel:5-stride:2-idskip:0": {
+        "type": "expanded_conv",
+        "input": [
+            14,
+            14,
+            96
+        ],
+        "output": [
+            7,
+            7,
+            192
+        ],
+        "expand": 3,
+        "kernel": 5,
+        "stride": 2,
+        "idskip": 0,
+        "pad_l": 1,
+        "pad_r": 2
+    },
+    "expanded_conv-input:14x14x96-output:7x7x192-expand:3-kernel:7-stride:2-idskip:0": {
+        "type": "expanded_conv",
+        "input": [
+            14,
+            14,
+            96
+        ],
+        "output": [
+            7,
+            7,
+            192
+        ],
+        "expand": 3,
+        "kernel": 7,
+        "stride": 2,
+        "idskip": 0,
+        "pad_l": 2,
+        "pad_r": 3
+    },
+    "expanded_conv-input:14x14x96-output:7x7x192-expand:6-kernel:3-stride:2-idskip:0": {
+        "type": "expanded_conv",
+        "input": [
+            14,
+            14,
+            96
+        ],
+        "output": [
+            7,
+            7,
+            192
+        ],
+        "expand": 6,
+        "kernel": 3,
+        "stride": 2,
+        "idskip": 0,
+        "pad_l": 0,
+        "pad_r": 1
+    },
+    "expanded_conv-input:14x14x96-output:7x7x192-expand:6-kernel:5-stride:2-idskip:0": {
+        "type": "expanded_conv",
+        "input": [
+            14,
+            14,
+            96
+        ],
+        "output": [
+            7,
+            7,
+            192
+        ],
+        "expand": 6,
+        "kernel": 5,
+        "stride": 2,
+        "idskip": 0,
+        "pad_l": 1,
+        "pad_r": 2
+    },
+    "expanded_conv-input:14x14x96-output:7x7x192-expand:6-kernel:7-stride:2-idskip:0": {
+        "type": "expanded_conv",
+        "input": [
+            14,
+            14,
+            96
+        ],
+        "output": [
+            7,
+            7,
+            192
+        ],
+        "expand": 6,
+        "kernel": 7,
+        "stride": 2,
+        "idskip": 0,
+        "pad_l": 2,
+        "pad_r": 3
+    },
+    "expanded_conv-input:28x28x40-output:14x14x80-expand:3-kernel:3-stride:2-idskip:0": {
+        "type": "expanded_conv",
+        "input": [
+            28,
+            28,
+            40
+        ],
+        "output": [
+            14,
+            14,
+            80
+        ],
+        "expand": 3,
+        "kernel": 3,
+        "stride": 2,
+        "idskip": 0,
+        "pad_l": 0,
+        "pad_r": 1
+    },
+    "expanded_conv-input:28x28x40-output:14x14x80-expand:3-kernel:5-stride:2-idskip:0": {
+        "type": "expanded_conv",
+        "input": [
+            28,
+            28,
+            40
+        ],
+        "output": [
+            14,
+            14,
+            80
+        ],
+        "expand": 3,
+        "kernel": 5,
+        "stride": 2,
+        "idskip": 0,
+        "pad_l": 1,
+        "pad_r": 2
+    },
+    "expanded_conv-input:28x28x40-output:14x14x80-expand:3-kernel:7-stride:2-idskip:0": {
+        "type": "expanded_conv",
+        "input": [
+            28,
+            28,
+            40
+        ],
+        "output": [
+            14,
+            14,
+            80
+        ],
+        "expand": 3,
+        "kernel": 7,
+        "stride": 2,
+        "idskip": 0,
+        "pad_l": 2,
+        "pad_r": 3
+    },
+    "expanded_conv-input:28x28x40-output:14x14x80-expand:6-kernel:3-stride:2-idskip:0": {
+        "type": "expanded_conv",
+        "input": [
+            28,
+            28,
+            40
+        ],
+        "output": [
+            14,
+            14,
+            80
+        ],
+        "expand": 6,
+        "kernel": 3,
+        "stride": 2,
+        "idskip": 0,
+        "pad_l": 0,
+        "pad_r": 1
+    },
+    "expanded_conv-input:28x28x40-output:14x14x80-expand:6-kernel:5-stride:2-idskip:0": {
+        "type": "expanded_conv",
+        "input": [
+            28,
+            28,
+            40
+        ],
+        "output": [
+            14,
+            14,
+            80
+        ],
+        "expand": 6,
+        "kernel": 5,
+        "stride": 2,
+        "idskip": 0,
+        "pad_l": 1,
+        "pad_r": 2
+    },
+    "expanded_conv-input:28x28x40-output:14x14x80-expand:6-kernel:7-stride:2-idskip:0": {
+        "type": "expanded_conv",
+        "input": [
+            28,
+            28,
+            40
+        ],
+        "output": [
+            14,
+            14,
+            80
+        ],
+        "expand": 6,
+        "kernel": 7,
+        "stride": 2,
+        "idskip": 0,
+        "pad_l": 2,
+        "pad_r": 3
+    },
+    "expanded_conv-input:28x28x40-output:28x28x40-expand:3-kernel:3-stride:1-idskip:1": {
+        "type": "expanded_conv",
+        "input": [
+            28,
+            28,
+            40
+        ],
+        "output": [
+            28,
+            28,
+            40
+        ],
+        "expand": 3,
+        "kernel": 3,
+        "stride": 1,
+        "idskip": 1,
+        "pad_l": 1,
+        "pad_r": 1
+    },
+    "expanded_conv-input:28x28x40-output:28x28x40-expand:3-kernel:5-stride:1-idskip:1": {
+        "type": "expanded_conv",
+        "input": [
+            28,
+            28,
+            40
+        ],
+        "output": [
+            28,
+            28,
+            40
+        ],
+        "expand": 3,
+        "kernel": 5,
+        "stride": 1,
+        "idskip": 1,
+        "pad_l": 2,
+        "pad_r": 2
+    },
+    "expanded_conv-input:28x28x40-output:28x28x40-expand:3-kernel:7-stride:1-idskip:1": {
+        "type": "expanded_conv",
+        "input": [
+            28,
+            28,
+            40
+        ],
+        "output": [
+            28,
+            28,
+            40
+        ],
+        "expand": 3,
+        "kernel": 7,
+        "stride": 1,
+        "idskip": 1,
+        "pad_l": 3,
+        "pad_r": 3
+    },
+    "expanded_conv-input:28x28x40-output:28x28x40-expand:6-kernel:3-stride:1-idskip:1": {
+        "type": "expanded_conv",
+        "input": [
+            28,
+            28,
+            40
+        ],
+        "output": [
+            28,
+            28,
+            40
+        ],
+        "expand": 6,
+        "kernel": 3,
+        "stride": 1,
+        "idskip": 1,
+        "pad_l": 1,
+        "pad_r": 1
+    },
+    "expanded_conv-input:28x28x40-output:28x28x40-expand:6-kernel:5-stride:1-idskip:1": {
+        "type": "expanded_conv",
+        "input": [
+            28,
+            28,
+            40
+        ],
+        "output": [
+            28,
+            28,
+            40
+        ],
+        "expand": 6,
+        "kernel": 5,
+        "stride": 1,
+        "idskip": 1,
+        "pad_l": 2,
+        "pad_r": 2
+    },
+    "expanded_conv-input:28x28x40-output:28x28x40-expand:6-kernel:7-stride:1-idskip:1": {
+        "type": "expanded_conv",
+        "input": [
+            28,
+            28,
+            40
+        ],
+        "output": [
+            28,
+            28,
+            40
+        ],
+        "expand": 6,
+        "kernel": 7,
+        "stride": 1,
+        "idskip": 1,
+        "pad_l": 3,
+        "pad_r": 3
+    },
+    "expanded_conv-input:56x56x24-output:28x28x40-expand:3-kernel:3-stride:2-idskip:0": {
+        "type": "expanded_conv",
+        "input": [
+            56,
+            56,
+            24
+        ],
+        "output": [
+            28,
+            28,
+            40
+        ],
+        "expand": 3,
+        "kernel": 3,
+        "stride": 2,
+        "idskip": 0,
+        "pad_l": 0,
+        "pad_r": 1
+    },
+    "expanded_conv-input:56x56x24-output:28x28x40-expand:3-kernel:5-stride:2-idskip:0": {
+        "type": "expanded_conv",
+        "input": [
+            56,
+            56,
+            24
+        ],
+        "output": [
+            28,
+            28,
+            40
+        ],
+        "expand": 3,
+        "kernel": 5,
+        "stride": 2,
+        "idskip": 0,
+        "pad_l": 1,
+        "pad_r": 2
+    },
+    "expanded_conv-input:56x56x24-output:28x28x40-expand:3-kernel:7-stride:2-idskip:0": {
+        "type": "expanded_conv",
+        "input": [
+            56,
+            56,
+            24
+        ],
+        "output": [
+            28,
+            28,
+            40
+        ],
+        "expand": 3,
+        "kernel": 7,
+        "stride": 2,
+        "idskip": 0,
+        "pad_l": 2,
+        "pad_r": 3
+    },
+    "expanded_conv-input:56x56x24-output:28x28x40-expand:6-kernel:3-stride:2-idskip:0": {
+        "type": "expanded_conv",
+        "input": [
+            56,
+            56,
+            24
+        ],
+        "output": [
+            28,
+            28,
+            40
+        ],
+        "expand": 6,
+        "kernel": 3,
+        "stride": 2,
+        "idskip": 0,
+        "pad_l": 0,
+        "pad_r": 1
+    },
+    "expanded_conv-input:56x56x24-output:28x28x40-expand:6-kernel:5-stride:2-idskip:0": {
+        "type": "expanded_conv",
+        "input": [
+            56,
+            56,
+            24
+        ],
+        "output": [
+            28,
+            28,
+            40
+        ],
+        "expand": 6,
+        "kernel": 5,
+        "stride": 2,
+        "idskip": 0,
+        "pad_l": 1,
+        "pad_r": 2
+    },
+    "expanded_conv-input:56x56x24-output:28x28x40-expand:6-kernel:7-stride:2-idskip:0": {
+        "type": "expanded_conv",
+        "input": [
+            56,
+            56,
+            24
+        ],
+        "output": [
+            28,
+            28,
+            40
+        ],
+        "expand": 6,
+        "kernel": 7,
+        "stride": 2,
+        "idskip": 0,
+        "pad_l": 2,
+        "pad_r": 3
+    },
+    "expanded_conv-input:56x56x24-output:56x56x24-expand:3-kernel:3-stride:1-idskip:1": {
+        "type": "expanded_conv",
+        "input": [
+            56,
+            56,
+            24
+        ],
+        "output": [
+            56,
+            56,
+            24
+        ],
+        "expand": 3,
+        "kernel": 3,
+        "stride": 1,
+        "idskip": 1,
+        "pad_l": 1,
+        "pad_r": 1
+    },
+    "expanded_conv-input:56x56x24-output:56x56x24-expand:3-kernel:5-stride:1-idskip:1": {
+        "type": "expanded_conv",
+        "input": [
+            56,
+            56,
+            24
+        ],
+        "output": [
+            56,
+            56,
+            24
+        ],
+        "expand": 3,
+        "kernel": 5,
+        "stride": 1,
+        "idskip": 1,
+        "pad_l": 2,
+        "pad_r": 2
+    },
+    "expanded_conv-input:56x56x24-output:56x56x24-expand:3-kernel:7-stride:1-idskip:1": {
+        "type": "expanded_conv",
+        "input": [
+            56,
+            56,
+            24
+        ],
+        "output": [
+            56,
+            56,
+            24
+        ],
+        "expand": 3,
+        "kernel": 7,
+        "stride": 1,
+        "idskip": 1,
+        "pad_l": 3,
+        "pad_r": 3
+    },
+    "expanded_conv-input:56x56x24-output:56x56x24-expand:6-kernel:3-stride:1-idskip:1": {
+        "type": "expanded_conv",
+        "input": [
+            56,
+            56,
+            24
+        ],
+        "output": [
+            56,
+            56,
+            24
+        ],
+        "expand": 6,
+        "kernel": 3,
+        "stride": 1,
+        "idskip": 1,
+        "pad_l": 1,
+        "pad_r": 1
+    },
+    "expanded_conv-input:56x56x24-output:56x56x24-expand:6-kernel:5-stride:1-idskip:1": {
+        "type": "expanded_conv",
+        "input": [
+            56,
+            56,
+            24
+        ],
+        "output": [
+            56,
+            56,
+            24
+        ],
+        "expand": 6,
+        "kernel": 5,
+        "stride": 1,
+        "idskip": 1,
+        "pad_l": 2,
+        "pad_r": 2
+    },
+    "expanded_conv-input:56x56x24-output:56x56x24-expand:6-kernel:7-stride:1-idskip:1": {
+        "type": "expanded_conv",
+        "input": [
+            56,
+            56,
+            24
+        ],
+        "output": [
+            56,
+            56,
+            24
+        ],
+        "expand": 6,
+        "kernel": 7,
+        "stride": 1,
+        "idskip": 1,
+        "pad_l": 3,
+        "pad_r": 3
+    },
+    "expanded_conv-input:7x7x192-output:7x7x192-expand:3-kernel:3-stride:1-idskip:1": {
+        "type": "expanded_conv",
+        "input": [
+            7,
+            7,
+            192
+        ],
+        "output": [
+            7,
+            7,
+            192
+        ],
+        "expand": 3,
+        "kernel": 3,
+        "stride": 1,
+        "idskip": 1,
+        "pad_l": 1,
+        "pad_r": 1
+    },
+    "expanded_conv-input:7x7x192-output:7x7x192-expand:3-kernel:5-stride:1-idskip:1": {
+        "type": "expanded_conv",
+        "input": [
+            7,
+            7,
+            192
+        ],
+        "output": [
+            7,
+            7,
+            192
+        ],
+        "expand": 3,
+        "kernel": 5,
+        "stride": 1,
+        "idskip": 1,
+        "pad_l": 2,
+        "pad_r": 2
+    },
+    "expanded_conv-input:7x7x192-output:7x7x192-expand:3-kernel:7-stride:1-idskip:1": {
+        "type": "expanded_conv",
+        "input": [
+            7,
+            7,
+            192
+        ],
+        "output": [
+            7,
+            7,
+            192
+        ],
+        "expand": 3,
+        "kernel": 7,
+        "stride": 1,
+        "idskip": 1,
+        "pad_l": 3,
+        "pad_r": 3
+    },
+    "expanded_conv-input:7x7x192-output:7x7x192-expand:6-kernel:3-stride:1-idskip:1": {
+        "type": "expanded_conv",
+        "input": [
+            7,
+            7,
+            192
+        ],
+        "output": [
+            7,
+            7,
+            192
+        ],
+        "expand": 6,
+        "kernel": 3,
+        "stride": 1,
+        "idskip": 1,
+        "pad_l": 1,
+        "pad_r": 1
+    },
+    "expanded_conv-input:7x7x192-output:7x7x192-expand:6-kernel:5-stride:1-idskip:1": {
+        "type": "expanded_conv",
+        "input": [
+            7,
+            7,
+            192
+        ],
+        "output": [
+            7,
+            7,
+            192
+        ],
+        "expand": 6,
+        "kernel": 5,
+        "stride": 1,
+        "idskip": 1,
+        "pad_l": 2,
+        "pad_r": 2
+    },
+    "expanded_conv-input:7x7x192-output:7x7x192-expand:6-kernel:7-stride:1-idskip:1": {
+        "type": "expanded_conv",
+        "input": [
+            7,
+            7,
+            192
+        ],
+        "output": [
+            7,
+            7,
+            192
+        ],
+        "expand": 6,
+        "kernel": 7,
+        "stride": 1,
+        "idskip": 1,
+        "pad_l": 3,
+        "pad_r": 3
+    },
+    "expanded_conv-input:7x7x192-output:7x7x320-expand:3-kernel:3-stride:1-idskip:0": {
+        "type": "expanded_conv",
+        "input": [
+            7,
+            7,
+            192
+        ],
+        "output": [
+            7,
+            7,
+            320
+        ],
+        "expand": 3,
+        "kernel": 3,
+        "stride": 1,
+        "idskip": 0,
+        "pad_l": 1,
+        "pad_r": 1
+    },
+    "expanded_conv-input:7x7x192-output:7x7x320-expand:3-kernel:5-stride:1-idskip:0": {
+        "type": "expanded_conv",
+        "input": [
+            7,
+            7,
+            192
+        ],
+        "output": [
+            7,
+            7,
+            320
+        ],
+        "expand": 3,
+        "kernel": 5,
+        "stride": 1,
+        "idskip": 0,
+        "pad_l": 2,
+        "pad_r": 2
+    },
+    "expanded_conv-input:7x7x192-output:7x7x320-expand:3-kernel:7-stride:1-idskip:0": {
+        "type": "expanded_conv",
+        "input": [
+            7,
+            7,
+            192
+        ],
+        "output": [
+            7,
+            7,
+            320
+        ],
+        "expand": 3,
+        "kernel": 7,
+        "stride": 1,
+        "idskip": 0,
+        "pad_l": 3,
+        "pad_r": 3
+    },
+    "expanded_conv-input:7x7x192-output:7x7x320-expand:6-kernel:3-stride:1-idskip:0": {
+        "type": "expanded_conv",
+        "input": [
+            7,
+            7,
+            192
+        ],
+        "output": [
+            7,
+            7,
+            320
+        ],
+        "expand": 6,
+        "kernel": 3,
+        "stride": 1,
+        "idskip": 0,
+        "pad_l": 1,
+        "pad_r": 1
+    },
+    "expanded_conv-input:7x7x192-output:7x7x320-expand:6-kernel:5-stride:1-idskip:0": {
+        "type": "expanded_conv",
+        "input": [
+            7,
+            7,
+            192
+        ],
+        "output": [
+            7,
+            7,
+            320
+        ],
+        "expand": 6,
+        "kernel": 5,
+        "stride": 1,
+        "idskip": 0,
+        "pad_l": 2,
+        "pad_r": 2
+    },
+    "expanded_conv-input:7x7x192-output:7x7x320-expand:6-kernel:7-stride:1-idskip:0": {
+        "type": "expanded_conv",
+        "input": [
+            7,
+            7,
+            192
+        ],
+        "output": [
+            7,
+            7,
+            320
+        ],
+        "expand": 6,
+        "kernel": 7,
+        "stride": 1,
+        "idskip": 0,
+        "pad_l": 3,
+        "pad_r": 3
+    }
+}

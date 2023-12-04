@@ -25,6 +25,19 @@ cmake_minimum_required(VERSION 3.13 FATAL_ERROR)
 # ---------------------------------------------------------------------
 # Project ArmCompute
 
+set(CMAKE_CXX_COMPILER "/home/huiying/system/gcc-linaro-13.0.0-2022.11-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-g++")
+set(CMAKE_C_COMPILER "/home/huiying/system/gcc-linaro-13.0.0-2022.11-x86_64_aarch64-linux-gnu/bin/aarch64-linux-gnu-gcc")
+#set(ARM_COMPUTE_ARCH "arm64-v8a")
+set(ARM_COMPUTE_OPENMP ON)
+set(ARM_COMPUTE_OPENCL ON)
+set(ARM_COMPUTE_NEON ON)
+set(ARM_COMPUTE_BUILD_EXAMPLES ON)
+set(CMAKE_INSTALL_LIBDIR "${CMAKE_BINARY_DIR}/install")
+
+message(${CMAKE_INSTALL_LIBDIR})
+#set(CMAKE_CXX_COMPILER "g++-10")
+#set(CMAKE_C_COMPILER "gcc-10")
+
 list(APPEND CMAKE_MESSAGE_CONTEXT ArmCompute)
 project(
   ArmCompute
@@ -48,6 +61,7 @@ include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/Options.cmake)
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/Version.cmake)
 
 # Require at least gcc/g++ 11) CMAKE_CXX_COMPILER_VERSION OR
+message(${CMAKE_C_COMPILER_VERSION})
 if(CMAKE_C_COMPILER_VERSION VERSION_LESS 10.2 OR CMAKE_CXX_COMPILER_VERSION
                                                  VERSION_LESS 10.2)
   message(

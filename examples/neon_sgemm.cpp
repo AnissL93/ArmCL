@@ -24,16 +24,27 @@
 #include "arm_compute/core/Types.h"
 #include "arm_compute/runtime/NEON/NEFunctions.h"
 #include "arm_compute/runtime/NEON/NEScheduler.h"
+#include "arm_compute/runtime/SingleThreadScheduler.h"
+#include "arm_compute/core/utils/FormatUtils.h"
+#include "src/cpu/operators/CpuAdd.h"
+#include "src/cpu/kernels/CpuAddKernel.h"
+#include "src/runtime/SchedulerUtils.h"
 #include "utils/Utils.h"
+#include "rapidjson/document.h"
+#include "rapidjson/writer.h"
+#include "rapidjson/stringbuffer.h"
 
+#include <chrono>
 #include <cstdlib>
+#include <iostream>
 
 using namespace arm_compute;
 using namespace utils;
+using namespace rapidjson;
 
 class NESGEMMExample : public Example
 {
-public:
+    public:
     bool do_setup(int argc, char **argv) override
     {
         NPYLoader npy0;
@@ -165,7 +176,16 @@ public:
     void do_run() override
     {
         // Execute the function
-        sgemm.run();
+        auto start_time = std::chrono::high_resolution_clock::now();
+        for(int i = 0; i < 50; ++i)
+        {
+            sgemm.run();
+        }
+        auto end_time = std::chrono::high_resolution_clock::now();
+        auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end_time - start_time);
+
+        std::cout << "Total time (50 times): " << duration.count() << " ms" << std::endl;
+        std::cout << "Average time: " << duration.count() / 50. << " ms" << std::endl;
     }
     void do_teardown() override
     {
@@ -175,13 +195,69 @@ public:
         }
     }
 
-private:
+    private:
     Tensor      src0{}, src1{}, src2{}, dst{};
     NEGEMM      sgemm{};
     float       alpha{}, beta{};
     bool        is_fortran{};
     std::string output_filename{};
 };
+
+void test()
+{
+    auto res = arm_compute::scheduler_utils::split_2d(6, 10, 20);
+//    std::cout << res.first << ", " << res.second << std::endl;
+
+    // test scheduler
+    auto st = std::make_unique<SingleThreadScheduler>();
+//    std::cout << "single thread num thread: " << st->num_threads();
+
+    auto &scheduler = CPPScheduler::get();
+//    std::cout << "cpp num thread: " << scheduler.num_threads();
+    scheduler.set_num_threads(2);
+
+    // t0->core 2
+    // t1->core 3
+    // t2->core 4
+    // t3->core 5
+//    std::cout << "cpp thread num thread: " << st->num_threads();
+    scheduler.set_num_threads_with_affinity(4, [&](int thread_idx, int core_num) -> int
+                                            { return thread_idx + (core_num - 4); });
+
+    // tensor data
+    TensorInfo tensorinfo(TensorShape(10), 1, DataType::F32);
+
+    Tensor a, b, c;
+    a.allocator()->init(tensorinfo);
+    b.allocator()->init(tensorinfo);
+    c.allocator()->init(tensorinfo);
+
+    a.allocator()->allocate();
+    b.allocator()->allocate();
+    c.allocator()->allocate();
+
+    for (auto i = 0; i < 10; ++i) {
+        float *a_ptr = (float*)a.buffer();
+        float *b_ptr = (float*)b.buffer();
+        a_ptr[i] = 1.1;
+        b_ptr[i] = 2.2;
+    }
+
+    // kernel
+    auto add_kernel = std::make_unique<cpu::kernels::CpuAddKernel>();
+
+    ConvertPolicy convertPolicy;
+    add_kernel->configure(&tensorinfo, &tensorinfo, &tensorinfo, convertPolicy);
+    ITensorPack tensor_pack = {
+        {ACL_SRC_0 , &a},
+        {ACL_SRC_1 , &b},
+        {ACL_DST , &c}
+    };
+
+    scheduler.schedule_op(add_kernel.get(), Window::DimX, add_kernel->window(), tensor_pack);
+
+//    c.print(std::cout);
+}
 
 /** Main program for sgemm test
  *
@@ -190,5 +266,6 @@ private:
  */
 int main(int argc, char **argv)
 {
+    test();
     return utils::run_example<NESGEMMExample>(argc, argv);
 }
