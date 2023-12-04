@@ -1,0 +1,8 @@
+#+title: Khadas
+
+
+* Run
+
+Just execute run.sh
+
+- khadas-soc: set the ip of khadas board in .ssh/config
