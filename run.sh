@@ -13,6 +13,6 @@ sshpass -p "khadas" scp -r execute/ $SSHADDR:~/
 echo "Copy so to board"
 sshpass -p "khadas" scp $BUILD_PATH/*.so $SSHADDR:~/execute/
 echo "Copy graph_expand_conv to board"
-sshpass -p "khadas" scp $BUILD_PATH/examples/graph_expand_conv $SSHADDR:~/execute
+sshpass -p "khadas" scp $BUILD_PATH/examples/graph_conv $SSHADDR:~/execute
 echo "Execute..."
-sshpass -p "khadas" ssh $SSHADDR "cd ~/execute; export LD_LIBRARY_PATH=~/execute; ./run_all.sh > latency.log 2>&1"
+#sshpass -p "khadas" ssh $SSHADDR "cd ~/execute; export LD_LIBRARY_PATH=~/execute; ./run_all.sh > latency.log 2>&1"

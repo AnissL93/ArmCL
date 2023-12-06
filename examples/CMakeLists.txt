@@ -45,7 +45,7 @@ set(EXAMPLE_GRAPH_NAMES
     graph_vgg16
     graph_vgg19
     graph_yolov3
-    graph_proxyless
+        graph_conv
     PARENT_SCOPE)
 
 set(EXAMPLE_NEON_NAMES

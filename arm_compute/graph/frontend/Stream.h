@@ -68,6 +68,7 @@ public:
     void add_layer(ILayer &layer) override;
     Graph       &graph() override;
     const Graph &graph() const override;
+    GraphManager &gm() { return _manager; }
 
 private:
     //Important: GraphContext must be declared *before* the GraphManager because the GraphManager

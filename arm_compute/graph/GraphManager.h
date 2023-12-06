@@ -78,6 +78,12 @@ public:
      */
     void invalidate_graph(Graph &graph);
 
+    void prepare_inputs(ExecutionWorkload& graph);
+    void execute_tasks(ExecutionWorkload& graph);
+    void prepare_outputs(ExecutionWorkload& graph);
+
+    ExecutionWorkload& get_workloads(Graph& graph);
+
 private:
     std::map<GraphID, ExecutionWorkload> _workloads = {}; /**< Graph workloads */
 };

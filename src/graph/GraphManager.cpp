@@ -149,6 +149,22 @@ void GraphManager::execute_graph(Graph &graph)
     }
 }
 
+ExecutionWorkload& GraphManager::get_workloads(Graph &graph) {
+    return _workloads.find(graph.id())->second;
+}
+
+void GraphManager::prepare_inputs(ExecutionWorkload& workload) {
+    detail::call_all_input_node_accessors(workload);
+}
+
+void GraphManager::execute_tasks(ExecutionWorkload& workloads) {
+    detail::call_all_tasks(workloads);
+}
+
+void GraphManager::prepare_outputs(ExecutionWorkload& workloads) {
+    detail::call_all_output_node_accessors(workloads);
+}
+
 void GraphManager::invalidate_graph(Graph &graph)
 {
     auto it = _workloads.find(graph.id());
