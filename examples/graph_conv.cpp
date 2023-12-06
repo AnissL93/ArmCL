@@ -233,8 +233,9 @@ class GraphConvExample : public Example
         // Print parameter values
         std::cout << common_params << std::endl;
 
+
         // Create input descriptor
-        const TensorShape tensor_shape     = permute_shape(TensorShape(224U, 224U, 3U, common_params.batches), DataLayout::NCHW, common_params.data_layout);
+        const TensorShape tensor_shape     = TensorShape(config.input_w, config.input_h, config.input_c, common_params.batches);
         TensorDescriptor  input_descriptor = TensorDescriptor(tensor_shape, common_params.data_type).set_layout(common_params.data_layout);
 
         graph << common_params.target
@@ -304,7 +305,7 @@ class GraphConvExample : public Example
 
     void create_logits(TensorDescriptor& input_descriptor) {
         graph << InputLayer(input_descriptor, get_random_accessor(0.f, 1.f))
-            << PoolingLayer(PoolingLayerInfo(PoolingType::AVG, common_params.data_layout)).set_name("Logits/AvgPool")
+            << PoolingLayer(PoolingLayerInfo(PoolingType::AVG, DataLayout::NCHW)).set_name("Logits/AvgPool")
             << ConvolutionLayer(1U, 1U, config.output_c,
                                   get_random_accessor(0., 1.),
                                   get_random_accessor(0., 1.),
